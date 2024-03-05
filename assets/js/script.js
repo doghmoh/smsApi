@@ -54,7 +54,7 @@ function createSidebar() {
 
     // Creating list items dynamically
     const items = [
-        { iconClass: 'fa fa-home fa-1x', text: 'الاساسية', href: 'dashbord.html' },
+        { iconClass: 'fa fa-home fa-1x', text: 'الاساسية', href: 'index.html' },
         { iconClass: 'fa fa-sms fa-1x', text: 'ارسال رسائل متعددة', href: 'bulksms.html' },
         { iconClass: 'fa fa-paperclip fa-1x', text: 'نماذج الرسائل', href: 'template.html' },
         { iconClass: 'fa fa-history fa-1x', text: 'سجلات الرسائل', href: 'history.html' },
