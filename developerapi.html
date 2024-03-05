@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer API</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+    .api-settings-container {
+        margin-top: 20px;
+    }
+
+    .api-settings-container h3 {
+        color: #333;
+        margin-top: 0;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .add-new-api {
+        margin-top: 20px;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    .submit-button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .submit-button:hover {
+        background-color: #45a049;
+    }
+
+    .edit-button,
+    .delete-button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .delete-button {
+        background-color: #dc3545;
+    }
+
+    .edit-button:hover,
+    .delete-button:hover {
+        opacity: 0.8;
+    }
+
+    /* Basic styling for layout */
+    .container1 {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between;
+        width: 100% !important;
+    }
+
+    .documentation {
+        flex: 1;
+        width: 50%;
+    }
+
+    .code-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 50%;
+    }
+
+    .code-samples {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #333;
+        color: #ccc;
+        width: 100%;
+    }
+
+    .btn-grp {
+        width: 100%;
+        display: flex;
+    }
+
+    .btn-grp button {
+        width: 25%;
+        height: 40px;
+        background: #333;
+        color: white;
+    }
+</style>
+
+<body>
+
+    <div id="header" class="header"></div>
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>واجهة برمجة التطبيق</h2>
+        <div class="api-settings-container">
+            <h3>API اعدادات</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الاسم</th>
+                        <th>المفتاح</th>
+                        <th>خيارات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>https://www.ayasms.com/api/v1/WD2e4$@dscRRsds@4sd3ddsasdf122eesds45ds%@ds!sc66</td>
+                        <td>sc33ir453Rt34************************fdf</td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>https://www.ayasms.com/api/v1/WD2e4$@dscRRsds@4sd3ddsasdf122eesds45ds%@ds!sc66</td>
+                        <td>sc33ir453Rt34vlwer235!***************</td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>https://www.ayasms.com/api/v1/WD2e4$@dscRRsds@4sd3ddsasdf122eesds45ds%@ds!sc66</td>
+                        <td>sc33ir453Rt34v***********************wdWQwqr!@rdsfdf</td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Add more rows dynamically here -->
+                </tbody>
+            </table>
+            <div class="add-new-api">
+                <button class="edit-button">Add new</button>
+            </div>
+        </div>
+
+        <div class="container1">
+            <div class="documentation">
+                <h2>توثيق استخدام الـ API</h2>
+                <p>هنا هو الوثائق التوضيحية التي تشرح كيفية استخدام الـ API في تطبيقك:</p>
+                <ul>
+                    <li>الخطوة 1: الحصول على مفتاح الـ API</li>
+                    <li>الخطوة 2: المصادقة على نقطة نهاية الـ API</li>
+                    <li>الخطوة 3: إجراء طلبات الـ API</li>
+                    <li>الخطوة 4: التعامل مع استجابات الـ API</li>
+                </ul>
+            </div>
+            <div class="code-container">
+                <div class="tab java">
+                    <div class="code-samples">
+                        <pre><code>
+                      import java.net.URI;
+                      import java.net.http.HttpClient;
+                      import java.net.http.HttpRequest;
+                      import java.net.http.HttpResponse;
+                      import java.net.http.HttpHeaders;
+                      import java.net.http.HttpRequest.BodyPublishers;
+                      
+                      public class Main {
+                          public static void main(String[] args) {
+                              sendSMS("+1234567890", "+9876543210", "Test SMS", "This is a test SMS message from Java");
+                          }
+                      
+                          // Function to send SMS
+                          public static void sendSMS(String sender, String receiver, String title, String content) {
+                              String apiKey = "YOUR_API_KEY";
+                              String url = "https://api.example.com/send-sms"; // Replace with your API endpoint
+                      
+                              HttpClient client = HttpClient.newHttpClient();
+                              HttpRequest request = HttpRequest.newBuilder()
+                                      .uri(URI.create(url))
+                                      .header("Content-Type", "application/json")
+                                      .header("Authorization", "Bearer " + apiKey)
+                                      .POST(BodyPublishers.ofString(
+                                              "{\"sender\":\"" + sender + "\",\"receiver\":\"" + receiver + "\",\"title\":\"" + title + "\",\"content\":\"" + content + "\"}"))
+                                      .build();
+                      
+                              try {
+                                  HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+                                  System.out.println(response.body());
+                              } catch (Exception e) {
+                                  System.err.println("Error sending SMS: " + e.getMessage());
+                              }
+                          }
+                      }
+                      
+                  </code></pre>
+                    </div>
+                </div>
+
+                <div class="tab nodejs">
+                    <div class="code-samples">
+                        <pre><code>
+                      const apiKey = 'YOUR_API_KEY';
+                      const url = 'https://api.example.com/send-sms'; // Replace with your API endpoint
+                  
+                      try {
+                          const response = await axios.post(url, {
+                              sender: sender,
+                              receiver: receiver,
+                              title: title,
+                              content: content
+                          }, {
+                              headers: {
+                                  'Authorization': `Bearer ${apiKey}`
+                              }
+                          });
+                          console.log(response.data);
+                      } catch (error) {
+                          console.error('Error sending SMS:', error);
+                      }
+                  </code></pre>
+                    </div>
+                </div>
+
+                <div class="tab php">
+                    <div class="code-samples">
+                        <pre><code>
+                      $apiKey = 'YOUR_API_KEY';
+                      $url = 'https://api.example.com/send-sms'; // Replace with your API endpoint
+                  
+                      $data = array(
+                          'sender' => $sender,
+                          'receiver' => $receiver,
+                          'title' => $title,
+                          'content' => $content
+                      );
+                  
+                      $options = array(
+                          'http' => array(
+                              'header'  => "Content-Type: application/json\r\n".
+                                           "Authorization: Bearer ".$apiKey,
+                              'method'  => 'POST',
+                              'content' => json_encode($data)
+                          )
+                      );
+                  
+                      $context  = stream_context_create($options);
+                      $result = file_get_contents($url, false, $context);
+                      if ($result === FALSE) {
+                          echo "Error sending SMS\n";
+                      } else {
+                          echo $result;
+                      }
+                  </code></pre>
+                    </div>
+                </div>
+
+                <div class="tab python">
+                    <div class="code-samples">
+                        <pre><code>
+                      api_key = 'YOUR_API_KEY'
+                      url = 'https://api.example.com/send-sms'  # Replace with your API endpoint
+                  
+                      headers = {
+                          'Content-Type': 'application/json',
+                          'Authorization': 'Bearer ' + api_key
+                      }
+                  
+                      data = {
+                          'sender': sender,
+                          'receiver': receiver,
+                          'title': title,
+                          'content': content
+                      }
+                  
+                      response = requests.post(url, headers=headers, data=json.dumps(data))
+                      if response.status_code == 200:
+                          print(response.text)
+                      else:
+                          print("Error sending SMS")
+                  </code></pre>
+                    </div>
+                </div>
+
+                <div class='btn-grp' style="text-align:center">
+                    <button onclick="openTab('java')">جافا</button>
+                    <button onclick="openTab('nodejs')">نود جي اس</button>
+                    <button onclick="openTab('php')">بي اتش بي</button>
+                    <button onclick="openTab('python')">بايثون</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        document.querySelector('.java').style.display = 'block';
+
+        function openTab(language) {
+            var tabs = document.querySelectorAll('.tab');
+            tabs.forEach(function (tab) {
+                tab.style.display = 'none';
+            });
+            document.querySelector('.' + language).style.display = 'block';
+        }
+    </script>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

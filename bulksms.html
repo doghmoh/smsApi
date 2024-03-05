@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Bulk SMS</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .bulk-sms-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .sms-form,
+    .contacts-table
+    {
+        width: 48%;
+        margin: 40px;
+    }
+
+    .sms-form h3,
+    .contacts-table h3,
+    .history h3 {
+        color: #333;
+        margin-top: 0;
+    }
+
+    .sms-form label,
+    .contacts-table label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .contacts-table table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    .contacts-table th,
+    .contacts-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .contacts-table th {
+        background-color: #f2f2f2;
+    }
+
+    .action-buttons {
+        margin-top: 10px;
+    }
+
+    .send-button {
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .send-button button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .send-button #clear-sms {
+        background-color: red;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .send-button button:hover {
+        background-color: #45a049;
+    }
+
+    .history {
+        width: 100%;
+    }
+    .history table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .history th,
+    .history td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .history th {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<body>
+    <div id="header" class="header"></div>
+    <div id="sidebar" class="sidebar"></div>
+
+    <div class="content">
+        <h2>ارسال رسائل متعددة</h2>
+        <div class="main">
+            <div class="bulk-sms-container">
+                <div class="sms-form">
+                    <h3>تشكيل رسالة قصيرة</h3>
+                    <form action="#" method="POST">
+                        <label for="subject">موضوع الرسالة:</label><br>
+                        <input type="text" id="subject" name="subject" placeholder="SMS subject"><br><br>
+                        <label for="message">الرسالة:</label><br>
+                        <textarea id="message" name="message" rows="10" cols="80" maxlength="160"
+                            placeholder="SMS text"></textarea><br><br>
+                        <span id="char-count">0/160</span>
+                    </form>
+                </div>
+                <div class="contacts-table">
+                    <h3>قائمة الارسال</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="select-all"></th>
+                                <th>الاسم</th>
+                                <th>رقم الهاتف </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>John Doe</td>
+                                <td>1234567890</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Mohamed Ali</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Karim Tot</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Hakim Sosi</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox"></td>
+                                <td>Jane Smith</td>
+                                <td>987-654-3210</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="action-buttons">
+                        <button id="add-contact">اضاقة ارقام</button>
+                        <input type="file" id="upload-csv" name="upload-csv">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="send-button">
+            <button id="send-sms">ارسال</button>
+
+            <button id="clear-sms">مسح</button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for character count
+        const messageTextarea = document.getElementById('message');
+        const charCountSpan = document.getElementById('char-count');
+
+        messageTextarea.addEventListener('input', function () {
+            const messageLength = this.value.length;
+            charCountSpan.textContent = messageLength + '/160';
+        });
+
+        // JavaScript code for select all checkbox
+        const selectAllCheckbox = document.getElementById('select-all');
+        const contactCheckboxes = document.querySelectorAll('.contacts-table input[type="checkbox"]');
+
+        selectAllCheckbox.addEventListener('change', function () {
+            contactCheckboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+    </script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
